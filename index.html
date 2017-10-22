@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 
 	<!-- Подключение стилей в href - путь к ним -->
-	<link rel="stylesheet" type="text/css" href="Style.css" />
+	<link rel="stylesheet" type="text/css" href="Styles.css" />
 
 	<title>PriceCalc</title>
 
@@ -22,48 +22,49 @@
 			<!-- Block for amount slider and couter-->
 			<div id="sliderBlock">
 				<!-- Label for amount slider -->
-				<label for=amountSlider style="mainLabel" >Количество человек</label>
+				<label for=amountSlider class="mainLabel" >Количество человек</label>
 
 				<!-- amount slider -->
-				<input type="range" name="amountSlider" id="
+				<input type="range" name="amountSlider" id="amountSlider"
 				min="1" max="12" step="1" value="6" oninput="changeResult()">
 
 				<!-- counter output -->
 				<output for=select id="outputCounter">6</output>
 
 			</div>
-			<br/><br/>
+			<br/>
 		<!--_________________________________________________________-->
 
 			<!-- Block for time selection list-->
 			<div id="selectBlock">
 				<!-- Label for time selection list-->
-				<label for=selectList style="mainLabel" >Время посещения</label>
+				<label for=selectList class="mainLabel" >Время посещения</label>
 				<!-- Select - list with posible times-->
 				<select name="selectList" id="selectList" selectedIndex="0" onclick="changeResult()">
 					<option value="false">До 13:00</option>
 					<option value="true">После 13:00</option>
 				</select>
-			</div><br /><br />
+			</div><br />
 		<!--_________________________________________________________-->
+
+			<!-- label for checkbox -->
+			<label style="mainLabel" >Дополнительно</label>
 
 			<!-- block for ckeckbox(romantic evening for 2) -->
 			<div id="romanticBlock">
+				<label>
+					<!-- checkbox (romanting evening for 2) -->
+					<!-- this checkbox is hidden!!! -->
+					<input type="checkbox" name="romantingCheckbox" id="romantingCheckbox" onclick="changeResultRomanting()">
 
-				<!-- label for checkbox -->
-				<label style="mainLabel" >Дополнительно</label>
+					<!-- fake visible checkbox -->
+					<span id="cbCustom" class="checkbox-custom" ></span>
 
-				<!-- checkbox (romanting evening for 2) -->
-				<!-- this checkbox is hidden!!! -->
-				<input type="checkbox" name="romantingCheckbox" id="romantingCheckbox" onclick="changeResultRomanting()">
-
-				<!-- fake visible checkbox -->
-				<span id="cbCustom" class="checkbox-custom" ></span>
-
-				<!-- checkbox label -->
- 				<span class="romanticLabel">Романтический вечер для двоих</span>
+					<!-- checkbox label -->
+	 				<span id="romanticLabel">Романтический вечер для двоих</span>
+ 				</label>
 			</div>
-		</div><br /><br />
+		</div>
 
 	<!--___________________________________________________________________________________________-->
 		<!-- Output block used to contain all output elements-->
@@ -73,7 +74,7 @@
 			<label for=result class="minorLabel">Результат</label>
 
 			<!-- result output field -->
-			<output name="result" id="outputResult"></output>
+			<output name="result" id="outputResult">600 руб.</output>
 		</div>
 	</div>
 </body>

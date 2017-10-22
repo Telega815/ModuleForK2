@@ -8,13 +8,12 @@ body {
 
 /* size and position of whole module */
 #mainBlock {
-
 	/* size */
 	height: 400px;
 	width: 300px;
 
 	/* centering block */
-	margin-left: calc(50%-150px);
+	margin-left: calc(50% - 150px);
 
 	/* desabling selection */
 	-webkit-user-select: none;
@@ -32,39 +31,192 @@ body {
 
 }
 
-
+/*----------------------------------Slider block----------------------------------*/
+/* sloder block attributes */
 #sliderBlock {
 	position: relative;
 }
 
+/* sloder attributes */
 #amountSlider {
+
+    /* disabling previous apperance */
     -webkit-appearance: none;
+
+    /* size, radious, color of slider line */
     position: relative;
     width: 80%;
     height: 3px;
     border-radius: 5px;
-    background-color: #d3d3d3; /* Цвет фона */
-    background-image: linear-gradient(to right, #6e93ff 50%, #d3d3d3 50%);
-    outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    background-color: #d3d3d3;
+    background-image: linear-gradient(to right, #6e93ff 50%, #d3d3d3 50%);
+
+    /* disabling selection line  */
+    outline: none;
 }
 
+/* for chrome and others */
 #amountSlider::-webkit-slider-thumb {
+
+    /* disabling previous apperance */
     -webkit-appearance: none;
     appearance: none;
+    
+    /* size, radious, color of thumb */
     width: 20px;
     height: 20px;
     border-radius: 50%; 
     background: #6e93ff;
+
+    /* cursor selkection */
     cursor: ew-resize;
 }
 
 #amountSlider::-moz-range-thumb {
+
+    /* size, radious, color of thumb */
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: #6e93ff;
+
+    /* cursor selkection */
     cursor: ew-resize;
+}
+
+/* counter attributes */
+#outputCounter {
+
+    /* size and position */
+    position: absolute;
+    right: 9px;
+    bottom: -7px;
+
+    /* font style */
+    font-size: 25px;
+    font-weight: bold;
+    color: #d3d3d3; 
+}
+
+
+/*----------------------------------Selection block----------------------------------*/
+
+#selectBlock {}
+
+/* select list attributes */
+#selectList {
+
+    /* size */
+    width: 100%;
+    height: 50px;
+
+    /* disabling previous apperance */
+    /*for WebKit*/
+    -webkit-appearance: none;
+    /* for FF */
+    -moz-appearance: none;
+    text-indent: 0.01px; 
+    text-overflow: '';
+    /* for IE */
+    -ms-appearance: none;
+    appearance: none!important;
+
+    /* disabling selection line  */
+    outline: none;
+
+    /* border , backgrount settings */
+    border: 2px solid #6e93ff;
+    border-radius: 5px;
+    background: #212121;
+    background-image: url('arrow2.jpg');
+    background-position: 95% center;
+    background-repeat: no-repeat;
+
+    /* text padding */
+    margin-top: 10px;
+    padding: 10px;
+
+    /* font style */
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Comic Sans MS, sans-serif;
+    color: #d3d3d3;
+}
+#selectList::-ms-expand {
+    display: none;
+}
+
+/*----------------------------------Checkbox block----------------------------------*/
+
+/* hoding real checkbox */
+#romantingCheckbox {
+    display: none;
+}
+ 
+/* creatingfake ckeckbox */
+#cbCustom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6e93ff;
+    border-radius: 3px;
+}
+
+/* Castom checkbox and label centering by vertical.  vertical-align: middle can be removed, display: inline-block must be */
+#cbCustom,
+#romanticLabel {
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+/* Checking fake checkbox if real is checked  */
+#romantingCheckbox:checked + #cbCustom::before {
+    content: "\2713";
+    display: block;
+    position: absolute;
+ 
+    top: -4px;
+    left: 3px;
+     
+    background: "\2713";
+    border-radius: 2px;
+}
+
+#romanticLabel {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Comic Sans MS, sans-serif;
+    color: #d3d3d3;
+}
+
+/*----------------------------------output block----------------------------------*/
+
+#outputBlock {
+    position: relative;
+    height: calc(25% - 20px);
+    background-color: #6e93ff;
+    padding: 10px;
+}
+
+.minorLabel {
+
+    position: absolute;
+    right: 10px;
+    top: 20px;
+
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+#outputResult {
+
+    font-size: 25px;
+    font-weight: bold;
+
+    position: absolute;
+    right: 10px;
+    top: 45px;
 }
