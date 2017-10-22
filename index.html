@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Кодировка (неожиданно правда)-->
+	<meta charset="utf-8" />
+
+	<!-- Подключение стилей в href - путь к ним -->
+	<link rel="stylesheet" type="text/css" href="Style.css" />
+
+	<title>PriceCalc</title>
+
+	<!-- Подключение скриптов в src - путь к нему -->
+	<script type="text/javascript" src="Scripts.js"></script>
+</head>
+<body>
+	<!-- Main block - basic container for all other elements-->
+	<div id="mainBlock">
+
+		<!-- Input block used to contain all input elements (and people counter)-->
+		<div id="inputBlock">
+
+			<!-- Block for amount slider and couter-->
+			<div id="sliderBlock">
+				<!-- Label for amount slider -->
+				<label for=amountSlider style="mainLabel" >Количество человек</label>
+
+				<!-- amount slider -->
+				<input type="range" name="amountSlider" id="
+				min="1" max="12" step="1" value="6" oninput="changeResult()">
+
+				<!-- counter output -->
+				<output for=select id="outputCounter">6</output>
+
+			</div>
+			<br/><br/>
+		<!--_________________________________________________________-->
+
+			<!-- Block for time selection list-->
+			<div id="selectBlock">
+				<!-- Label for time selection list-->
+				<label for=selectList style="mainLabel" >Время посещения</label>
+				<!-- Select - list with posible times-->
+				<select name="selectList" id="selectList" selectedIndex="0" onclick="changeResult()">
+					<option value="false">До 13:00</option>
+					<option value="true">После 13:00</option>
+				</select>
+			</div><br /><br />
+		<!--_________________________________________________________-->
+
+			<!-- block for ckeckbox(romantic evening for 2) -->
+			<div id="romanticBlock">
+
+				<!-- label for checkbox -->
+				<label style="mainLabel" >Дополнительно</label>
+
+				<!-- checkbox (romanting evening for 2) -->
+				<!-- this checkbox is hidden!!! -->
+				<input type="checkbox" name="romantingCheckbox" id="romantingCheckbox" onclick="changeResultRomanting()">
+
+				<!-- fake visible checkbox -->
+				<span id="cbCustom" class="checkbox-custom" ></span>
+
+				<!-- checkbox label -->
+ 				<span class="romanticLabel">Романтический вечер для двоих</span>
+			</div>
+		</div><br /><br />
+
+	<!--___________________________________________________________________________________________-->
+		<!-- Output block used to contain all output elements-->
+		<div id="outputBlock">
+
+			<!-- result label -->
+			<label for=result class="minorLabel">Результат</label>
+
+			<!-- result output field -->
+			<output name="result" id="outputResult"></output>
+		</div>
+	</div>
+</body>
+</html>

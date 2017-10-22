@@ -1,0 +1,70 @@
+/* font style for whole module */
+body {
+	font-family: Comic Sans Ms, sans-serif;
+	color: #ffffff;
+	font-size: normal;
+	font-size: 20px;
+}
+
+/* size and position of whole module */
+#mainBlock {
+
+	/* size */
+	height: 400px;
+	width: 300px;
+
+	/* centering block */
+	margin-left: calc(50%-150px);
+
+	/* desabling selection */
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* attributes of input block */
+#inputBlock {
+
+	/* size, backgroud color, and text padding of block */
+	height: calc(75% - 25px);
+	background-color: #212121;
+	padding: 15px 20px 10px 20px;
+
+}
+
+
+#sliderBlock {
+	position: relative;
+}
+
+#amountSlider {
+    -webkit-appearance: none;
+    position: relative;
+    width: 80%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #d3d3d3; /* Цвет фона */
+    background-image: linear-gradient(to right, #6e93ff 50%, #d3d3d3 50%);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#amountSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #6e93ff;
+    cursor: ew-resize;
+}
+
+#amountSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #6e93ff;
+    cursor: ew-resize;
+}
