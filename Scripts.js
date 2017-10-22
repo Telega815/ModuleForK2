@@ -1,5 +1,5 @@
  /**
-   * 
+   * calculation function if checkbox is checked
    */
 function changeResultRomanting(amount){
 	var result;
@@ -24,8 +24,8 @@ function changeResultRomanting(amount){
 }
 
 /**
-   * 
-   */
+  * calculation function if checkbox is unckecked
+  */
 function changeResult(){
 	if (document.getElementById("romantingCheckbox").checked) {
 		changeResultRomanting();
@@ -53,21 +53,21 @@ function changeResult(){
 	result = (amount < 5 ? 0 : amount -5) * 100 + 500;
 	result = isEvening ? result*2 : result;
 
-	outputResult.value = trim(result) + " руб.";
+	outputResult.value = transform(result) + " руб.";
 }
 
 /**
-   * 
-   */
+  * cosmetic function for changing color of left side of slider
+  */
 function changeColor(slider){
 	var res = ((slider.value-1)/11)*100;
 	slider.style.background = "linear-gradient(to right, #6e93ff " + res +"%, #d3d3d3 "+res+"%)";
 }
 
 /**
-   * 
-   */
-function trim(a){
+  * transformin answer to required string 
+  */
+function transform(a){
 	if (a > 999){
 		return Math.floor(a/1000) + " " + ((a % 1000 != 0) ? (a % 1000) : "000") ;
 	}
